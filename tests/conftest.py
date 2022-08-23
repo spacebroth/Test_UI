@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options as chrome_options
 def get_chrome_options():
     options = chrome_options()
     options.add_argument('--window-size=1920,1080')
-    options.add_argument('chrome')  # "--headless"
+    options.add_argument('--headless')  # "--headless"
     return options
 
 
