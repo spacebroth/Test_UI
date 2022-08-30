@@ -19,4 +19,4 @@ class TestDiskPage:
         assert 'Файл для копирования.docx' in page.get_elements_in_current_folder()
         page.delete_folder_in_root(folder_name)
         page.sign_out()
-        time.sleep(2)  # Просто визуально убедиться проверяющему, что разлогинились)
+        time.sleep(2)  # Просто визуально убедиться, что разлогинились
