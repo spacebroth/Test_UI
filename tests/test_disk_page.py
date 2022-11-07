@@ -1,6 +1,8 @@
 import time
 import pytest
+from pages.auth_page import AuthPage
 from pages.disk_page import DiskPage
+from pages.main_ya_page import MainYaPage
 
 
 @pytest.mark.usefixtures('setup')
@@ -10,8 +12,10 @@ class TestDiskPage:
                                              'АвтоПапка2Лооооооооооооооооооооооооооооооооооооооооооооооооооооооооонг'])
     def test_create_folder_and_copy_file(self, folder_name):
         page = DiskPage(self.driver)
-        page.authorization_from_main_page()
-        page.go_to_disk()
+        main_page = MainYaPage(self.driver)
+        auth_page = AuthPage(self.driver)
+        auth_page.authorization_from_main_page()
+        main_page.go_to_disk()
         page.create_new_item_with_name_('Папку', folder_name)
         page.copy_or_move_item('Копировать', folder_name)
         page.go_to_root()
