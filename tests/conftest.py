@@ -24,7 +24,7 @@ def setup(request):
     options = chrome_options()
     options.add_argument('--window-size=1920,1080')
     options.add_argument('chrome')  # "--headless"
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options, executable_path='/home/spacebroth/Projects/Test_UI/chromedriver')
     url = 'https://ya.ru/'
     if request.cls is not None:
         request.cls.driver = driver
