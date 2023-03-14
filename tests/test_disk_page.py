@@ -8,8 +8,8 @@ from pages.main_ya_page import MainYaPage
 @pytest.mark.usefixtures('setup')
 class TestDiskPage:
 
-    @pytest.mark.parametrize('folder_name', ['АвтоПапка',
-                                             'АвтоПапка2Лооооооооооооооооооооооооооооооооооооооооооооооооооооооооонг'])
+    @pytest.mark.parametrize('folder_name', ['AutoFolder',
+                                             'AutoFolder2Looooooooooooooooooooooooooooooooooooooooooooooooooooooooong'])
     def test_create_folder_and_copy_file(self, folder_name):
         page = DiskPage(self.driver)
         main_page = MainYaPage(self.driver)
